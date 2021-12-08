@@ -1,0 +1,15 @@
+.opciones {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.input-group {
+    width: 50%;
+}
+
+.opcnuevas input {
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    text-align: center;
+}
