@@ -34,7 +34,7 @@
 					<td>{!! $estandar->lenguajes->nombre !!}</td>
 					<td>{!! $estandar->nombre !!}</td>
 					<td class="opc">
-						<a class="btn btn-primary" href="{!! 'estandares/'.$estandar->id.'/edit' !!}" role="button">Editar</a>
+						<a class="btn btn-primary" href="{!! asset('estandares/'.$estandar->id.'/edit') !!}" role="button">Editar</a>
 						<a class="btn btn-primary" href="{!! asset('estandar_apartado/'.$estandar->id) !!}" role="button">Apartados</a>
 						{!! Form::open(['method'=>'DELETE','url'=>'/estandares/'.$estandar->id]) !!}
 						<input class="btn btn-primary" type="submit" value="Eliminar">
@@ -46,7 +46,6 @@
 		</div>
 		<div class="opcnuevas">
 			<a class="btn btn-primary" href="{!! asset('estandares/create') !!}" role="button">Crear un estandar</a>
-			<!-- <a class="btn btn-primary" {!! asset('entidades_eliminados') !!}" role="button">ver estandares eliminadas</a> -->
 			<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 		</div>
 	</div>
