@@ -31,19 +31,18 @@
 					<td>{!! $lenguaje->nombre !!}</td>
 					<td>{!! $lenguaje->extension !!}</td>
 					<td class="opc">
-						<a class="btn btn-primary" href="{!! 'lenguajes/'.$lenguaje->id.'/edit' !!}" role="button">Editar</a>
+						<!-- <a class="btn btn-primary" href="{!! 'lenguajes/'.$lenguaje->id.'/edit' !!}" role="button">Editar</a> -->
 						<a class="btn btn-primary" href="{!! asset('lenguaje_estandar/'.$lenguaje->id) !!}" role="button">Estandares</a>
-						{!! Form::open(['method'=>'DELETE','url'=>'/lenguajes/'.$lenguaje->id]) !!}
-						<input class="btn btn-primary" type="submit" value="Eliminar">
-						{!! Form::close() !!}
+						<!-- {!! Form::open(['method'=>'DELETE','url'=>'/lenguajes/'.$lenguaje->id]) !!}
+						 <input class="btn btn-primary" type="submit" value="Eliminar"> 
+						{!! Form::close() !!} -->
 					</td>
 				</tr>
 				@endforeach
 			</table>
 		</div>
 		<div class="opcnuevas">
-			<a class="btn btn-primary" href="lenguajes/create" role="button">Crear Lenguaje</a>
-			<!-- <a class="btn btn-primary" href="{!! asset('lenguajes_eliminados') !!}" role="button">Restaurar eliminados</a> -->
+			<!-- <a class="btn btn-primary" href="lenguajes/create" role="button">Crear Lenguaje</a> -->
 			<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 		</div>
 	</div>
