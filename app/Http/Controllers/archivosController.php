@@ -60,7 +60,7 @@ class archivosController extends Controller
         $archiv= $request->file('archiv');
         $input=array('file'=>$archiv);
         $reglas=array('file'=>
-            'required|mimes:txt,java,py|max:10240');//en kb
+            'required|max:10240');//en kb
         $validacion=Validator::make($input,$reglas);
 
         
