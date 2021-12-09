@@ -56,7 +56,7 @@ class valoresController extends Controller
         $id_regla = $request->id_regla;
         $errores = '';
         $n_errores = 0;
-        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
 
         if ($tipo==0) {//SI ES CONSTANTE
 
@@ -75,6 +75,12 @@ class valoresController extends Controller
              $errores .= '-El valor no debe tener caracteres especiales<BR>';
              $errores .= 'si necesitas usar un caracter especial prueba con un caracter variable<BR>';
             }
+
+            if($valor == null){
+             $n_errores++;
+             $errores .= 'El nombre es nulo<BR>';
+            }
+
 
             if ($n_errores == 0) {
                 $datos = $request->all();

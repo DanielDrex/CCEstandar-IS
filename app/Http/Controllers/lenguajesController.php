@@ -45,7 +45,7 @@ class lenguajesController extends Controller
         $tamano_nom = strlen($nombre);
         $extension = $request->get('extension');
         $tamano_ext = strlen($extension);
-        $meta = '[\(|\)|\^|\$|\.|\[|\]|\||\?|\*|\+|\{|\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
         if($tamano_nom > 10){
          $n_errores++;
          $errores = $errores.'El nombre del lenguaje debe ser menor a 10 caracteres<BR>';
@@ -58,6 +58,12 @@ class lenguajesController extends Controller
          $n_errores++;
          $errores = $errores.'La extensión solo debe tener letras<BR>';
         }
+
+        if($nombre == null){
+         $n_errores++;
+         $errores .= 'El nombre es nulo<BR>';
+        }
+
 
 
         if($n_errores==0){

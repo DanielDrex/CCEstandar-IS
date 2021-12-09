@@ -43,7 +43,7 @@
 			@else
 			<div class="opciones">
 				<span class="input-group-text" id="basic-addon1">{!! Form::label ('caracteres','Caracteres permitidos') !!}</span> &nbsp;
-				{!! Form::select ('caracteres',array('0'=>'Espacio','1'=>'Letras','2'=>'Numeros','3'=>'Letras y numeros','4'=>'Llaves {}','5'=>'Parentesis ()','6'=>'Corchetes []','7'=>'Todos los caracteres')) !!}
+				{!! Form::select ('caracteres',array('0'=>'Espacio','1'=>'Letras','2'=>'Numeros','3'=>'Letras y numeros','4'=>'Llaves abierta {','5'=>'Llaves abierta }','6'=>'Corchete abierto [','7'=>'Corchete cerrado ]','8'=>'Parentesis abierto (','9'=>'Parentesis cerrado )','10'=>'Pesos $','11'=>'punto .','12'=>'interrogacion ?','13'=>'potencia ^','14'=>'asterisco *','15'=>'mas +','16'=>'o logico |','17'=>'Todos caracter sin espacios','18'=>'Todos caracter con espacios')) !!}
 			</div>
 			{!! Form::hidden ('valor','1VARIABLE1') !!}
 			{!! Form::hidden ('tipo_valor', 1) !!}

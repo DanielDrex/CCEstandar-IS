@@ -46,7 +46,7 @@
 			<input class="btn btn-primary" type="submit" value="Guardar lenguaje">
 			{!! Form::close() !!}
 			<div class="input">
-				<a class="btn btn-primary" href="{!! '/lenguajes' !!}" role="button">Cancelar</a>
+				<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 			</div>
 		</div>
 	</div>

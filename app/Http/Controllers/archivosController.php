@@ -52,7 +52,7 @@ class archivosController extends Controller
         $n_errores = 0;
         $nombre = $request->nombre;
         $tamano_nom = strlen($nombre);
-        $meta = '[\(|\)|\^|\$|\.|\[|\]|\||\?|\*|\+|\{|\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
         //$rutaarchivos = '../storage/fotografias/';
         $hora = date('h_i_s');
         $fecha = date('d_m_Y');
@@ -88,6 +88,12 @@ class archivosController extends Controller
                  $n_errores++;
                  $errores .= 'El nombre no debe tener caracteres especiales<BR>';
                 }
+
+                if($nombre == null){
+                 $n_errores++;
+                 $errores .= 'El nombre es nulo<BR>';
+                }
+
 
                 $ruta=$prefijo .'_'.$archiv->getClientOriginalName();
 
@@ -374,7 +380,7 @@ class archivosController extends Controller
                     $busqueda_principal='';
                     $busqueda_coincidente='';
                     $bnd_preventivo=0;//para busquedas variables
-                    $meta = '/\(\)\^\$\.\[\]\|\?\*\+\{\}\-/';
+                    $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
                     $orden='';
 
                     $group_pos = reglas::where('id_apartado',$apartado->id)->groupBy('posicion')->count();
@@ -444,16 +450,54 @@ class archivosController extends Controller
                                                  $busqueda_principal = $busqueda_principal."[a-zA-Z0-9_]+";
                                                  $orden .= $regla->nombre;
                                                 }else if($caracteres == 4){
-                                                 $busqueda_principal = $busqueda_principal."[\{\}]+";
+                                                 $busqueda_principal = $busqueda_principal."[\{]+";
                                                  $orden .= $regla->nombre;
                                                 }else if($caracteres == 5){
-                                                 $busqueda_principal = $busqueda_principal."[\(\)]+";
+                                                 $busqueda_principal = $busqueda_principal."[\}]+";
                                                  $orden .= $regla->nombre;
                                                 }else if($caracteres == 6){
-                                                 $busqueda_principal = $busqueda_principal."[\[\]]+";
+                                                 $busqueda_principal = $busqueda_principal."[\[]+";
                                                  $orden .= $regla->nombre;
                                                 }else if($caracteres == 7){
+                                                 $busqueda_principal = $busqueda_principal."[\]]+";
+                                                 $orden .= $regla->nombre;
+                                                }else if($caracteres == 8){
+                                                 $busqueda_principal = $busqueda_principal."[\(]+";
+                                                 $orden .= $regla->nombre;
+                                                
+                                                }else if($caracteres == 9){
+                                                 $busqueda_principal = $busqueda_principal."[\)]+";
+                                                 $orden .= $regla->nombre;
+                                                
+                                                }else if($caracteres == 10){
+                                                 $busqueda_principal = $busqueda_principal."[\$]+";
+                                                 $orden .= $regla->nombre;
+                                                
+                                                }else if($caracteres == 11){
+                                                 $busqueda_principal = $busqueda_principal."[\.]+";
+                                                 $orden .= $regla->nombre;
+                                                
+                                                }else if($caracteres == 12){
+                                                 $busqueda_principal = $busqueda_principal."[\?]+";
+                                                 $orden .= $regla->nombre;
+                                                
+                                                }else if($caracteres == 13){
+                                                 $busqueda_principal = $busqueda_principal."[\^]+";
+                                                 $orden .= $regla->nombre;
+                                                }else if($caracteres == 14){
+                                                 $busqueda_principal = $busqueda_principal."[\*]+";
+                                                 $orden .= $regla->nombre;
+                                                }else if($caracteres == 15){
+                                                 $busqueda_principal = $busqueda_principal."[\+]+";
+                                                 $orden .= $regla->nombre;
+                                                }else if($caracteres == 16){
+                                                 $busqueda_principal = $busqueda_principal."[\|]+";
+                                                 $orden .= $regla->nombre;
+                                                }else if($caracteres == 17){
                                                  $busqueda_principal = $busqueda_principal."[^ \t\n\r\f\v]+";
+                                                 $orden .= $regla->nombre;
+                                                }else if($caracteres == 18){
+                                                 $busqueda_principal = $busqueda_principal."[^\t\n\r\f\v]+";
                                                  $orden .= $regla->nombre;
                                                 }
                                                 }//fin foreach
@@ -516,7 +560,7 @@ class archivosController extends Controller
                                     
 
                                     echo "<BR>";
-                                    //espacio para mostrar lo que se necesite
+                                    echo $busqueda_principal;
 
                                     if($observaciones==''){
                                         echo "Sin ninguna observacion";   

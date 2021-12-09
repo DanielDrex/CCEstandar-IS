@@ -46,7 +46,7 @@ class estandaresController extends Controller
         $n_errores = 0;
         $nombre = $request->get('nombre');
         $tamano_nom = strlen($nombre);
-        $meta = '[\(|\)|\^|\$|\.|\[|\]|\||\?|\*|\+|\{|\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
 
         if($tamano_nom > 10){
          $n_errores++;
@@ -56,6 +56,11 @@ class estandaresController extends Controller
         if(preg_match("/$meta/", $nombre)){
          $n_errores++;
          $errores .= 'El nombre no debe tener caracteres especiales<BR>';
+        }
+
+        if($nombre == null){
+         $n_errores++;
+         $errores .= 'El nombre es nulo<BR>';
         }
 
         //$estandares = estandares::where('id_lenguaje',$id)->get();
@@ -113,7 +118,7 @@ class estandaresController extends Controller
         $n_errores = 0;
         $nombre = $request->get('nombre');
         $tamano_nom = strlen($nombre);
-        $meta = '[\(|\)|\^|\$|\.|\[|\]|\||\?|\*|\+|\{|\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
 
         //$estandares = estandares::where('id_lenguaje',$id_lenguaje)->get();
         //return view('estandares.index')->with('estandares',$estandares)->with('id_leng',$id);
@@ -125,6 +130,11 @@ class estandaresController extends Controller
         if(preg_match("/$meta/", $nombre)){
          $n_errores++;
          $errores .= 'El nombre no debe tener caracteres especiales<BR>';
+        }
+
+        if($nombre == null){
+         $n_errores++;
+         $errores .= 'El nombre es nulo<BR>';
         }
 
         if ($n_errores == 0) {
@@ -148,8 +158,7 @@ class estandaresController extends Controller
         $estandar = estandares::find($id);
         $id_lenguaje = $estandar->id_lenguaje;
         $estandar -> destroy($id);
-        return redirect('/view-clear');
-        //return redirect('lenguaje_estandar/'.$id_lenguaje);
+        return redirect('lenguaje_estandar/'.$id_lenguaje);
     }
 
 

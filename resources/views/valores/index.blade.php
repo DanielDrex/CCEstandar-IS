@@ -69,15 +69,48 @@
 					<td>Letras y numeros</td>
 					@break
 					@case(4)
-					<td>Llaves</td>
+					<td>Llave abierta</td>
 					@break
 					@case(5)
-					<td>Parentesis</td>
+					<td>Llave cerrada</td>
 					@case(6)
-					<td>Corchetes</td>
+					<td>Corchete abierto</td>
 					@break
 					@case(7)
-					<td>Todos</td>
+					<td>Corchete cerrado</td>
+					@break
+					@case(8)
+					<td>Parentesis abierto</td>
+					@break
+					@case(9)
+					<td>Parentesis cerrado</td>
+					@break
+					@case(10)
+					<td>Pesos</td>
+					@break
+					@case(11)
+					<td>Punto</td>
+					@break
+					@case(12)
+					<td>Interrogacion</td>
+					@break
+					@case(13)
+					<td>Potencia</td>
+					@break
+					@case(14)
+					<td>Asterisco</td>
+					@break
+					@case(15)
+					<td>Mas</td>
+					@break
+					@case(16)
+					<td>ó logico</td>
+					@break
+					@case(17)
+					<td>Todos sin esp</td>
+					@break
+					@case(18)
+					<td>Todos con esp</td>
 					@break
 					@endswitch
 					<td> Variable </td>
