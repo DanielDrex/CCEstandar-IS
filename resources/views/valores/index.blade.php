@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+</body>
+
+</html>
+
 <html>
 
 <head>
@@ -90,7 +93,6 @@
 			@endif
 		</div>
 		<div class="opcnuevas">
-			<!-- <a class="btn btn-primary" href="lenguajes/create" role="button">Crear Lenguaje</a> -->
 			<a class="btn btn-primary" href="{!! asset('apartado_reglas/'.$id_apartado) !!}" role="button">Regresar a las reglas</a>
 			<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 		</div>
