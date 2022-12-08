@@ -42,7 +42,7 @@
 			</table>
 		</div>
 		<div class="opcnuevas">
-			<!-- <a class="btn btn-primary" href="lenguajes/create" role="button">Crear Lenguaje</a> -->
+			<a class="btn btn-primary" href="lenguajes/create" role="button">Crear Lenguaje</a>
 			<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 		</div>
 	</div>

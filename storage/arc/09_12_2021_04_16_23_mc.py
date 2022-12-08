@@ -1,5 +1,5 @@
+import subp rocess
 import subprocess
-import  subprocess
 interface = raw_input("interface > ")
 
 int^ entero^3;

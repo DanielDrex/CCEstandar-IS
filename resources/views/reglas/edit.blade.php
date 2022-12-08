@@ -44,7 +44,7 @@
 			<input class="btn btn-primary" type="submit" value="Guardar editado">
 			{!! Form::close() !!}
 			<div class="input">
-				<a class="btn btn-primary" href="{!! '/reglas' !!}" role="button">Cancelar</a>
+				<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 			</div>
 		</div>
 	</div>
