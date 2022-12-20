@@ -54,7 +54,7 @@ class apartadosController extends Controller
         $n_errores = 0;
         $nombre = $request->get('nombre');
         $tamano_nom = strlen($nombre);
-        $meta = '[\(|\)|\^|\$|\.|\[|\]|\||\?|\*|\+|\{|\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
 
         if($tamano_nom > 10){
          $n_errores++;
@@ -65,6 +65,12 @@ class apartadosController extends Controller
          $n_errores++;
          $errores .= 'El nombre no debe tener caracteres especiales<BR>';
         }
+
+        if($nombre == null){
+         $n_errores++;
+         $errores .= 'El nombre es nulo<BR>';
+        }
+
 
         if ($n_errores == 0) {
             $datos = $request->all();
@@ -122,11 +128,16 @@ class apartadosController extends Controller
         $n_errores = 0;
         $nombre = $request->get('nombre');
         $tamano_nom = strlen($nombre);
-        $meta = '[\(|\)|\^|\$|\.|\[|\]|\||\?|\*|\+|\{|\}]';
+        $meta = '[\(\)\^\$\.\[\]\|\?\*\+\{\}\\\]';
 
         if($tamano_nom > 10){
          $n_errores++;
          $errores .= 'El nombre del apartado no debe ser mayor a 10 caracteres<BR>';
+        }
+
+        if($nombre == null){
+         $n_errores++;
+         $errores .= 'El nombre es nulo<BR>';
         }
 
         if(preg_match("/$meta/", $nombre)){

@@ -72,7 +72,7 @@
 		<input class="btn btn-primary" type="submit" value="Guardar apartado">
 		{!! Form::close() !!}
 		<div class="input">
-			<a class="btn btn-primary" href="{!! '/apartados' !!}" role="button">Cancelar</a>
+			<a class="btn btn-primary" href="{!! asset('home') !!}" role="button">Regresar al home</a>
 		</div>
 	</div>
 	</div>
